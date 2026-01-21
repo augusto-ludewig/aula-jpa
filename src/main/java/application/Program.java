@@ -27,8 +27,12 @@ public class Program {
 		em.persist(p2);
 		em.persist(p3);
 		
+		// busca no banco
 		Person p4 = em.find(Person.class, 1);
 		System.out.println(p4);
+		
+		// deleta do banco
+		em.remove(p4);
 		
 		//comita a transação
 		em.getTransaction().commit();
